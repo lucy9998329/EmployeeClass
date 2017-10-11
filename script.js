@@ -1,20 +1,17 @@
 //Declaring Variables
 let table = document.getElementById('table');
+let fname = document.querySelector('#fname')
+let lname = document.querySelector('#lname')
+let salary = document.querySelector('#salary')
 
-//let fname = document.querySelector('#fname')
-//let lname = document.querySelector('#lname')
-//let salary = document.querySelector('#slr')
-
-//let FirstName = document.querySelector('#FirstName')
-//let submit = document.querySelector('#submit') 
-
+let FirstName = document.querySelector('#FirstName')
+let submit = document.querySelector('#submit') 
 
 
-//Create a function to calculate conversion 
 {class Employee {
 
     get fname() {
-        return '${this._fname}'
+    return '${this._fname}'
     }
     set fname() {
         this._fname = '${value}'
@@ -26,7 +23,7 @@ let table = document.getElementById('table');
         this._lname = '${value}'
     }
     get salary() {
-        return this._salary
+        return '{this._salary}'
     }
     set salary() {
         this._salary = '${value}'
@@ -37,18 +34,21 @@ function constructor(fname, lname, salary){
     this._lname = lname;
     this._salary = salary; 
 
-function displayEmployee(fname, lname, salary){
-    Employee.call(this, fname, lname, salary); //call class, base construction function
-    console.log('Last Name', $(this,_lname));
+//Create a function to display input 
+//function displayEmployee(fname, lname, salary){
+//Employee.call(this, fname, lname, salary); //call class, base construction function
+    //console.log('Last Name', $(this,_lname));
 }
-for(var i = 1; i < table.row.length; i++)
+for(var i = 1; i < table.rows.length; i++)
 {
-    table.row[i].onclick = function(){
+    table.rows[i].onclick = function(){
         document.getElementById("fname"). value = this.cells[0]. innerHTML;
         document.getElementById("lname"). value = this.cells[1]. innerHTML;
-        document.getElementById("slr"). value = this.cells[2]. innerHTML;
+        document.getElementById("salary"). value = this.cells[2]. innerHTML;
+        console.log('hi')
     }
 }
+
 //displayEmployee.prototype = new Employee(); // create a prototype chain
 //displayEmployee.prototype.constructor = displayEmployee
 }
@@ -64,4 +64,4 @@ for(var i = 1; i < table.row.length; i++)
 
 
 
-//submit.addEventListener('click', (e) => {table.innerHTML = displayEmployee(fname.value, lname.value, slr.value,); e.preventDefault()})
+//submit.addEventListener('click', (e) => {table.innerHTML = displayEmployee(fname.value, lname.value, salary.value,); e.preventDefault()})
